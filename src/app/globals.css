@@ -1,0 +1,53 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root { --navy: #00254d; --brand: #e5484d; }
+
+html { scroll-behavior: smooth; }
+body {
+  background: #f5f9ff;
+  color: #00254d;
+  font-family: "Manrope", system-ui, sans-serif;
+  font-weight: 500;
+  -webkit-font-smoothing: antialiased;
+}
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after { animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; transition-duration: 0.01ms !important; }
+}
+
+/* Keyboard focus: always visible */
+:focus-visible { outline: 3px solid #2f6feb; outline-offset: 3px; border-radius: 8px; }
+
+@layer components {
+  .glass {
+    background: rgba(255, 255, 255, 0.78);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    border: 1px solid #dce7f5;
+    box-shadow: 0 10px 40px -12px rgba(0, 37, 77, 0.18);
+  }
+  .section { @apply relative mx-auto w-full max-w-6xl px-5 py-16 sm:px-8 md:py-24; }
+  .eyebrow { @apply inline-block rounded-full bg-tint px-3.5 py-1.5 text-sm font-bold text-blue; }
+  .h1 { @apply font-extrabold leading-[1.08] tracking-tight text-navy; font-size: clamp(2.1rem, 5.4vw, 3.9rem); }
+  .h2 { @apply font-extrabold leading-tight tracking-tight text-navy; font-size: clamp(1.7rem, 3.6vw, 2.6rem); }
+  .lead { @apply text-muted; font-size: clamp(1rem, 1.5vw, 1.2rem); line-height: 1.7; }
+  .btn { @apply inline-flex items-center justify-center gap-2 rounded-2xl px-6 py-3.5 text-base font-bold transition-colors duration-200 disabled:cursor-not-allowed disabled:opacity-60; }
+  .btn-primary { @apply bg-brand text-white shadow-soft hover:bg-brand-dark; }
+  .btn-secondary { @apply border border-line bg-white/80 text-navy shadow-soft hover:bg-white; }
+  .icon-box { @apply grid h-12 w-12 place-items-center rounded-2xl bg-tint text-blue; }
+}
+
+/* 3D tilt card glare */
+.tilt { transform-style: preserve-3d; transition: transform 0.25s ease-out; will-change: transform; }
+.tilt .glare {
+  position: absolute; inset: 0; border-radius: inherit; pointer-events: none; opacity: 0; transition: opacity 0.25s;
+  background: radial-gradient(circle at var(--gx, 50%) var(--gy, 50%), rgba(255, 255, 255, 0.55), transparent 55%);
+}
+.tilt:hover .glare { opacity: 1; }
+
+@keyframes scrollHint { 0% { transform: translateY(0); opacity: 0; } 30% { opacity: 1; } 100% { transform: translateY(12px); opacity: 0; } }
+.scroll-dot { animation: scrollHint 1.8s ease-in-out infinite; }
+@keyframes blobMove { 0%,100% { transform: translate(0,0) scale(1); } 50% { transform: translate(30px,-20px) scale(1.08); } }
+.blob { animation: blobMove 18s ease-in-out infinite; }
