@@ -4,6 +4,7 @@
 export type Person = {
   name: string;
   role: string;
+  title?: string;
   bio: string;
   photo: string;
   linkedin: string;
@@ -14,7 +15,8 @@ export const team: Person[] = [
   {
     name: "Muhammad Harmain",
     role: "CO-Founder",
-    bio: "Team Lead And Software Developer Built the working system: the admin and driver consoles, the three agents and the automatic alert flow. Turns the project's design into software that runs end to end.",
+    title: "Team Lead And Software Developer",
+    bio: "Built the working system: the admin and driver consoles, the three agents and the automatic alert flow. Turns the project’s design into software that runs end to end.",    
     photo: "/images/harmain.jpg",
     linkedin: "https://www.linkedin.com/in/muhammad-harmain-b6b335221/",
     github: "https://github.com/Mharmain/",
@@ -22,7 +24,8 @@ export const team: Person[] = [
   {
     name: "Ahmed Arif",
     role: "CO-Founder",
-    bio: "Documentation & System Architecture Designed how the parts of Ignis RescueLink fit together (The Architecture) and documented the system and its decisions. His work keeps the project clear, organized and easy to explain.",
+    title: "Documentation & System Architecture",
+    bio: "Designed how the parts of Ignis RescueLink fit together and documented the system and its decisions. His work keeps the project clear, organized and easy to explain.",    
     photo: "/images/ahmed.png",
     linkedin: "https://www.linkedin.com/in/aa-ahmed-arif/",
     github: "https://github.com/aa-ahmed-arif",
@@ -30,7 +33,8 @@ export const team: Person[] = [
   {
     name: "Royam Ali Khan",
     role: "CO-Founder",
-    bio: "  Testing & Cloud Deployment    Tests the system to check that alerts, routes and consoles behave as expected, and handles putting the project online in the cloud. His work helps keep Ignis RescueLink dependable.",
+    title: "Testing & Cloud Deployment",
+    bio: "Tests the system to check that alerts, routes and consoles behave as expected, and handles putting the project online in the cloud. His work helps keep Ignis-RescueLink dependable.",
     photo: "/images/royam.jpg",
     linkedin: "https://www.linkedin.com/in/royam-ali-khan-695276356/",
     github: "https://github.com/rakhxn-droid",

@@ -20,7 +20,8 @@ export default function PersonCard({ p, wide = false }: { p: Person; wide?: bool
       <div className={wide ? "mt-5 md:mt-0" : "mt-5"}>
         <h3 className="text-xl font-extrabold">{p.name}</h3>
         <p className="mt-0.5 font-bold text-brand">{p.role}</p>
-        <p className="mt-3 leading-relaxed text-muted">{p.bio}</p>
+        {p.title && <p className="mt-3 font-extrabold text-navy">{p.title}</p>}
+        <p className={`${p.title ? "mt-1" : "mt-3"} leading-relaxed text-muted`}>{p.bio}</p>
         {(p.linkedin || p.github) && (
           <div className={`mt-4 flex gap-3 ${wide ? "" : "justify-center"}`}>
             {p.linkedin && <a href={p.linkedin} target="_blank" rel="noopener noreferrer" aria-label={`${p.name} on LinkedIn`} className="grid h-10 w-10 place-items-center rounded-xl bg-tint text-blue hover:bg-blue hover:text-white"><Icon name="linkedin" className="h-5 w-5" /></a>}
