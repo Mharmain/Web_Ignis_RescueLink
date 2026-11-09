@@ -22,7 +22,7 @@ export const team: Person[] = [
   {
     name: "Ahmed Arif",
     role: "CO-Founder",
-    bio: "Documentation & System Architecture\nDesigned how the parts of Ignis RescueLink fit together (The Architecture) and documented the system and its decisions. His work keeps the project clear, organized and easy to explain.",
+    bio: "'Documentation & System Architecture'\nDesigned how the parts of Ignis RescueLink fit together (The Architecture) and documented the system and its decisions. His work keeps the project clear, organized and easy to explain.",
     photo: "/images/ahmed.png",
     linkedin: "https://www.linkedin.com/in/aa-ahmed-arif/",
     github: "https://github.com/aa-ahmed-arif",
